@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de JavaScript</title>
+    <link rel="stylesheet" href="Lab04.css">
+    <link rel="stylesheet" href="Lab04_respuestas.css">
+    <script>
+        function limpiarPantalla() {
+            document.body.innerHTML = `
+                <h1>Ejercicios de JavaScript</h1>
+                <button onclick="tablaCuadradosCubos()">Ejecutar Tabla</button>
+                <button onclick="sumaInteractiva()">Ejecutar Suma</button>
+                <button onclick="contador()">Ejecutar Contador</button>
+                <button onclick="promedios()">Ejecutar Promedios</button>
+                <button onclick="inverso()">Ejecutar Inverso</button>
+                <button onclick="problemaInteresante()">Ejecutar Problema Interesante</button>
+                <button onclick="mostrarPreguntas()">Respuestas Lab04</button>
+            `;
+        }
+        
+        function mostrarBotonesRepetir(funcion) {
+            document.body.innerHTML += `
+                <br><br>
+                <button onclick="limpiarPantalla()">Regresar</button>
+                <button onclick="${funcion}()">Repetir</button>
+            `;
+        }
+        
+        function tablaCuadradosCubos() {
+            let num = parseInt(prompt("Introduce un número:"));
+            document.body.innerHTML = "<h2>Tabla de cuadrados y cubos</h2>";
+            let tabla = "<table border='1'><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>";
+            for (let i = 1; i <= num; i++) {
+                tabla += `<tr><td>${i}</td><td>${i ** 2}</td><td>${i ** 3}</td></tr>`;
+            }
+            tabla += "</table>";
+            document.body.innerHTML += tabla;
+            mostrarBotonesRepetir("tablaCuadradosCubos");
+        }
+        
+        function sumaInteractiva() {
+            let a = Math.floor(Math.random() * 10) + 1;
+            let b = Math.floor(Math.random() * 10) + 1;
+            let inicio = Date.now();
+            let respuesta = parseInt(prompt(`¿Cuánto es ${a} + ${b}?`));
+            let fin = Date.now();
+            let tiempo = (fin - inicio) / 1000;
+            let mensaje = (respuesta === a + b) ? "Correcto" : "Incorrecto";
+            document.body.innerHTML = `<p>${mensaje}. Tiempo: ${tiempo} segundos.</p>`;
+            document.body.innerHTML += `<p>La suma era: ${a} + ${b} = ${a + b}</p>`;
+            mostrarBotonesRepetir("sumaInteractiva");
+        }
+        
+        function contador() {
+            let input = prompt("Introduce números separados por comas:");
+            let arr = input.split(',').map(Number);
+            let negativos = arr.filter(n => n < 0).length;
+            let ceros = arr.filter(n => n === 0).length;
+            let positivos = arr.filter(n => n > 0).length;
+            document.body.innerHTML = `<p>Arreglo ingresado: [${arr.join(", ")}]</p>`;
+            document.body.innerHTML += `<p>Negativos: ${negativos}, Ceros: ${ceros}, Positivos: ${positivos}</p>`;
+            mostrarBotonesRepetir("contador");
+        }
+        
+        function promedios() {
+            let filas = parseInt(prompt("¿Cuántas filas tendrá la matriz?"));
+            let matriz = [];
+            for (let i = 0; i < filas; i++) {
+                let fila = prompt(`Introduce los números de la fila ${i + 1} separados por comas:`).split(',').map(Number);
+                matriz.push(fila);
+            }
+            let resultados = matriz.map(fila => fila.reduce((a, b) => a + b, 0) / fila.length);
+            document.body.innerHTML = `<p>Matriz ingresada: ${JSON.stringify(matriz)}</p>`;
+            document.body.innerHTML += `<p>Promedios: ${resultados.join(', ')}</p>`;
+            mostrarBotonesRepetir("promedios");
+        }
+        
+        function inverso() {
+            let num = prompt("Introduce un número para invertir:");
+            let resultado = parseInt(num.toString().split('').reverse().join(''));
+            document.body.innerHTML = `<p>Número original: ${num}</p>`;
+            document.body.innerHTML += `<p>Número inverso: ${resultado}</p>`;
+            mostrarBotonesRepetir("inverso");
+        }
+        
+        function problemaInteresante() {
+            class Banco {
+                constructor(nombre) {
+                    this.nombre = nombre;
+                    this.saldo = 0;
+                }
+                depositar(cantidad) {
+                    this.saldo += cantidad;
+                    return `Depósito de ${cantidad}. Saldo actual: ${this.saldo}`;
+                }
+                retirar(cantidad) {
+                    if (cantidad > this.saldo) {
+                        return "Fondos insuficientes.";
+                    }
+                    this.saldo -= cantidad;
+                    return `Retiro de ${cantidad}. Saldo actual: ${this.saldo}`;
+                }
+            }
+            
+            let cuenta = new Banco("Mi Cuenta");
+            document.body.innerHTML = "<h2>Banco Virtual</h2>";
+            let opcion;
+            do {
+                opcion = prompt("Elige una opción: 1) Depositar  2) Retirar  3) Salir");
+                if (opcion === "1") {
+                    let cantidad = parseFloat(prompt("Cantidad a depositar:"));
+                    document.body.innerHTML += `<p>${cuenta.depositar(cantidad)}</p>`;
+                } else if (opcion === "2") {
+                    let cantidad = parseFloat(prompt("Cantidad a retirar:"));
+                    document.body.innerHTML += `<p>${cuenta.retirar(cantidad)}</p>`;
+                }
+            } while (opcion !== "3");
+            mostrarBotonesRepetir("problemaInteresante");
+            
+        }
+
+    function mostrarPreguntas() {
+        let contenedor = document.getElementById("contenedor-preguntas");
+
+        if (!contenedor) {
+            contenedor = document.createElement("div");
+            contenedor.id = "contenedor-preguntas";
+            document.body.appendChild(contenedor);
+        }
+        contenedor.innerHTML += `
+            <h2>Respuestas a las preguntas del Laboratorio 4</h2>
+            <article>
+                <h4>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h4>
+                <b>Diferencias:</b>
+                <ul>
+                    <li>Java está orientado a objetos y está fuertemente tipado. Javascript es un lenguaje de scripting interpretado que está débilmente tipado.</li>
+                    <li>Java se ejecuta en la Máquina Virtual de Java. Javascript se ejecuta en navegadores web.</li>
+                    <li>El código fuente de Java se compila en bytecode antes de ejecutarse. El código fuente de Javascript es interpretado directamente por el navegador o motor  de JavaScript.</li>
+                    <li>Java, como ya mencioné, está fuertemente tipado, lo que implica que los tipos deben declararse explícitamente. Javascript, al ser débilmente tipado, los tipos se asignan dinámicamente.</li>
+                    <li>Java se usa para aplicaciones de escritorio, móvil, servidores y sistemas empresariales. Javascript se usa para el desarrollo web, servidores con Node.js y para aplicaciones móviles híbridas.</li>
+                    <li>Javascript aguanta múltiples hilos de ejecución. Javascript maneja tareas de forma asíncrona.</li>
+                </ul>>
+                <b>Semejanzas:</b>
+                <ul>
+                    <li>Ambos tienen una sintaxis parecida al lenguaje de programación C, donde ambos usan llaves “{}” para definir bloques de código, y usan if, for, while, switch, entre estructuras parecidas.</li>
+                    <li>Son lenguajes multiplataforma, solo que Java se ejecuta en cualquier programa con JVM y JavaScript se ejecuta en cualquier navegador que sea moderno y en servidores con Node.js.</li>
+                    <li>Ambos funcionan estando orientados a objetos; pues Java usa clases y objetos tradicionalmente mientras que Javascript, aunque se enfoque más en prototipos, permite igualmente trabajar con clases.</li>
+                    <li>Ambos se aplican en el desarrollo web, pero Java es para el backend y Javascript para el frontend (pero igual se usa en el backend cuando se le usa en Node.js).</li>
+                </ul>
+                <p> En conclusión, Java y Javascript don dos lenguajes que, aunque parecen parecidos, son muy distintos. Java es más estructurado y tipado mientras que JavaScript es más flexible y dinámico. Aparte, los fines para los que se usan los hacen muy distintos, pues Java se enfoca en aplicaciones empresariales, móviles y sistema complejos mientras que JavaScript domina más el desarrollo web y las aplicaciones asíncronas.</p>
+                <a href="https://universidadeuropea.com/blog/diferencias-entre-java-y-javascript/#:~:text=Java%20es%20un%20lenguaje%20de,lenguaje%20compilado%20y%20JavaScript%20interpretado" target="_blank">Universidad Europea (2022). “Diferencia entre Java y JavaScript”. Recuperado de: https://universidadeuropea.com/blog/diferencias-entre-java-y-javascript/#:~:text=Java%20es%20un%20lenguaje%20de,lenguaje%20compilado%20y%20JavaScript%20interpretado</a>
+                <p></p>
+                <a href="https://www.hackaboss.com/blog/diferencias-javascript-java" target="_blank">Luis Meza (2025). “¿Qué diferencias hay entre Java y JavaScript?”. Recuperado de: https://www.hackaboss.com/blog/diferencias-javascript-java</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h4>
+                <ul>
+                    <li>getFullYear(): Devuelve el año de la fecha en un formato de cuatro dígitos.</li>
+                    <li>getMonth(): Devuelve el número del mes (de 0 a 11, donde 0 es enero y 11 es diciembre).</li>
+                    <li>getDate(): Devuelve el día del mes (de 1 a 31).</li>
+                    <li>getDay(): Devuelve el día de la semana (de 0 a 6, donde 0 es domingo y 6 es sábado).</li>
+                    <li>toISOString(): Devuelve la fecha en formato ISO 8601 (YYYY-MM-DDTHH:mm:ss.sssZ). Aquí, el YYYY representa el año con cuatro dígitos, el MM representa los meses, DD el día, T separa la fecha de la hora, HH representa las horas, mm los minutos, ss los segundos, sss los milisegundos y Z la zona horaria. Se suele usar para bases de datos y APIs.</li>
+                </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">MDN Web Docs (S.F.). “Date”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h4>
+                <ul>
+                    <li>push(): Este método añade uno o más elementos al final del arreglo y devuelve la nueva longitud de este.</li>
+                    <li>pop(): Este método elimina el último elemento del arreglo y devuelve el elemento eliminado.</li>
+                    <li>shift(): Este método elimina el primer elemento del arreglo y devuelve el elemento eliminado.</li>
+                    <li>unshift(): Este método añade uno o más elementos al inicio del arreglo y devuelve la nueva longitud.</li>
+                    <li>map(): Este método recorre el array y crea un nuevo array con los valores transformados según la función que se le pida.</li>
+                    <li>find(): Encuentra el primer elemento que cumple con una condición.</li>
+                    <li>sort(): Ordena los elementos del arreglo.</li>
+                </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN Web Docs (S.F.). “Array”: Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Cómo se declara una variable con alcance local dentro de una función?</h4>
+                <p>Primero se debe crear la función. Dentro de esta se debe de crear la variable, ya sea con let para 
+                    que sea variable o const para que sea constante. Una vez creadas dentro de su respectiva función podrán ser 
+                    usadas sólo y únicamente dentro de la función en la que están, pues fuera de esta no existirán. En el caso de 
+                    var no es muy recomendable usarla ya que tiene alcance de función y no de bloque, lo que puede llegar causar 
+                    problemas de accesibilidad y otros tipos de errores, así que ese tipo de variable no es recomendable usarla 
+                    como variable local dentro de una función.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types" target="_blank">MDN Web Docs (S.F.) “Grammar and types”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h4>
+                <p>Las variables globales pueden ser accedidas y modificadas dentro de cualquier función, lo que puede generar problemas a la hora de trabajar con el mantenimiento,  seguridad y el rendimiento. Algunos ejemplos de estos problemas pueden ser:</p>
+                <ul>
+                    <li>Existe el riesgo de que se sobreescriba en la variable accidentalmente, afectando al resto del código que trabaja con esa variable.</li>
+                    <li>Dificulta la depuración y el mantenimiento del código, ya que el exceso de variables globales hace que el código sea menos predecible , pues cualquier parte del código podría cambiar el valor que tengan debido al uso de este tipo de variables.</li>
+                    <li>El rendimiento del programa se puede ver gravemente afectado, pues al tener las mismas variables en memoria todo el tiempo de ejecución puede consumir recursos innecesariamente.</li>
+                    <li>Complica el reutilizar el código ya que, al depender todo el código de las mismas variables globales, no se puede reutilizar tan fácil el código sin afectar al resto del código que no deseas usar pero que son dependientes de esas variables globales.</li>
+                </ul>
+                <p>En conclusión, las variables globales no se deberían de usar tanto, pues para eso es mejor trabajar con variables locales como las ya mencionadas let y const dentro de sus respectivas funciones. Y si llega a ser necesaria una variable global, es mejor usar una variable de tipo const y objeto para disminuir los riegos de los problemas ya mencionados.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types" target="_blank">MDN Web Docs (S.F.) “Grammar and types”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types</a>
+                <p></p>
+            </article>
+        `;
+        mostrarBotonesRepetir("mostrarPreguntas");
+    }
+
+    </script>
+</head>
+<body onload="limpiarPantalla()">
+</body>
+</html>
