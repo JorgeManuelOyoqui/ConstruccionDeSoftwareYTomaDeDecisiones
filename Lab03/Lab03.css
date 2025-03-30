@@ -1,0 +1,163 @@
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 4px solid #17a2b8;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #343a40;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #495057;
+}
+
+h5 {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    background-color: #17a2b8;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #138496;
+}
+
+/* Secciones principales */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Secciones individuales */
+section {
+    margin-bottom: 30px;
+}
+
+/* Formato de listas */
+ul {
+    padding-left: 20px;
+}
+
+/* Formato para figuras e imágenes */
+.imagenes-sobre-mi {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+figure {
+    margin: 20px 0;
+    text-align: center;
+}
+
+figure img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+figure img:hover {
+    transform: scale(1.05);
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 8px;
+}
+
+/* Estilo de artículos */
+article {
+    padding: 15px;
+    border-left: 4px solid #17a2b8;
+    background-color: #f1f1f1;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Estilo de enlaces */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Sección de contacto */
+#contacto p strong {
+    color: #17a2b8;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #343a40;
+    color: white;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+p {
+    text-align: justify;
+  }
+
+li {
+    text-align: justify;
+  }
