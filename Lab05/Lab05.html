@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de JavaScript</title>
+    <link rel="stylesheet" href="materialize.min.css">
+    <style>
+        .justificado {
+            text-align: justify;
+        }
+        .lista-preguntas {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card-panel white z-depth-3 center-align">
+            <h4>Ejercicios de JavaScript</h4>
+            <div id="buttons-container">
+                <button class="btn teal" onclick="tablaCuadradosCubos()">Ejecutar Tabla</button>
+                <button class="btn teal" onclick="sumaInteractiva()">Ejecutar Suma</button>
+                <button class="btn teal" onclick="contador()">Ejecutar Contador</button>
+                <button class="btn teal" onclick="promedios()">Ejecutar Promedios</button>
+                <button class="btn teal" onclick="inverso()">Ejecutar Inverso</button>
+                <p></p>
+                <button class="btn teal" onclick="problemaInteresante()">Ejecutar Problema Interesante</button>
+                <button class="btn teal" onclick="mostrarPreguntasL04()">Mostrar Respuestas Lab04 y Lab05</button>
+            </div>
+            <div id="contenido" class="section"></div>
+            <button class="btn red" id="btnRegresar" style="display: none;" onclick="regresar()">Regresar</button>
+        </div>
+    </div>
+
+    <script>
+        
+        function actualizarContenido(html) {
+            document.getElementById("contenido").innerHTML = html;
+            document.getElementById("buttons-container").style.display = "none";
+            document.getElementById("btnRegresar").style.display = "block";
+        }
+
+        function regresar() {
+            document.getElementById("contenido").innerHTML = "";
+            document.getElementById("buttons-container").style.display = "block";
+            document.getElementById("btnRegresar").style.display = "none";
+
+            let contenedor = document.getElementById("contenedor-preguntas");
+            if (contenedor) {
+                contenedor.style.display = "none"; // Ocultar el contenido
+                contenedor.innerHTML = ""; // Eliminar el contenido
+            }
+        }
+        
+        function tablaCuadradosCubos() {
+            let num = parseInt(prompt("Introduce un número:"));
+            let tabla = "<table border='1'><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>";
+            for (let i = 1; i <= num; i++) {
+                tabla += `<tr><td>${i}</td><td>${i ** 2}</td><td>${i ** 3}</td></tr>`;
+            }
+            tabla += "</table>";
+            actualizarContenido(tabla);
+        }
+        
+        function sumaInteractiva() {
+            let a = Math.floor(Math.random() * 10) + 1;
+            let b = Math.floor(Math.random() * 10) + 1;
+            let inicio = Date.now();
+            let respuesta = parseInt(prompt(`¿Cuánto es ${a} + ${b}?`));
+            let fin = Date.now();
+            let tiempo = (fin - inicio) / 1000;
+            let mensaje = (respuesta === a + b) ? "Correcto" : "Incorrecto";
+            actualizarContenido(`<p>${mensaje}. Tiempo: ${tiempo} segundos.</p><p>La suma era: ${a} + ${b} = ${a + b}</p>`);
+        }
+        
+        function contador() {
+            let input = prompt("Introduce números separados por comas:");
+            let arr = input.split(',').map(Number);
+            let negativos = arr.filter(n => n < 0).length;
+            let ceros = arr.filter(n => n === 0).length;
+            let positivos = arr.filter(n => n > 0).length;
+            actualizarContenido(`<p>Arreglo ingresado: [${arr.join(", ")}]</p><p>Negativos: ${negativos}, Ceros: ${ceros}, Positivos: ${positivos}</p>`);
+        }
+        
+        function promedios() {
+            let filas = parseInt(prompt("¿Cuántas filas tendrá la matriz?"));
+            let matriz = [];
+            for (let i = 0; i < filas; i++) {
+                let fila = prompt(`Introduce los números de la fila ${i + 1} separados por comas:`).split(',').map(Number);
+                matriz.push(fila);
+            }
+            let resultados = matriz.map(fila => fila.reduce((a, b) => a + b, 0) / fila.length);
+            actualizarContenido(`<p>Matriz ingresada: ${JSON.stringify(matriz)}</p><p>Promedios: ${resultados.join(', ')}</p>`);
+        }
+        
+        function inverso() {
+            let num = prompt("Introduce un número para invertir:");
+            let resultado = parseInt(num.toString().split('').reverse().join(''));
+            actualizarContenido(`<p>Número original: ${num}</p><p>Número inverso: ${resultado}</p>`);
+        }
+        
+        function problemaInteresante() {
+            class Banco {
+                constructor(nombre) {
+                    this.nombre = nombre;
+                    this.saldo = 0;
+                }
+                depositar(cantidad) {
+                    this.saldo += cantidad;
+                    return `Depósito de ${cantidad}. Saldo actual: ${this.saldo}`;
+                }
+                retirar(cantidad) {
+                    if (cantidad > this.saldo) {
+                        return "Fondos insuficientes.";
+                    }
+                    this.saldo -= cantidad;
+                    return `Retiro de ${cantidad}. Saldo actual: ${this.saldo}`;
+                }
+            }
+            
+            let cuenta = new Banco("Mi Cuenta");
+            let contenido = document.getElementById("contenido");
+            contenido.innerHTML = `
+                <h2>Banco Virtual</h2>
+                <button class="btn green" onclick="realizarDeposito()">Depositar</button>
+                <button class="btn red" onclick="realizarRetiro()">Retirar</button>
+                <button class="btn grey" onclick="regresar()">Regresar</button>
+                <p id="estadoCuenta">Saldo actual: ${cuenta.saldo}</p>
+            `;
+
+            window.realizarDeposito = function () {
+                let cantidad = parseFloat(prompt("Cantidad a depositar:"));
+                document.getElementById("estadoCuenta").innerText = cuenta.depositar(cantidad);
+            };
+
+            window.realizarRetiro = function () {
+                let cantidad = parseFloat(prompt("Cantidad a retirar:"));
+                document.getElementById("estadoCuenta").innerText = cuenta.retirar(cantidad);
+            };  
+        }
+
+    function mostrarPreguntasL04() {
+        let contenedor = document.getElementById("contenedor-preguntas");
+
+        if (!contenedor) {
+            contenedor = document.createElement("div");
+            contenedor.id = "contenedor-preguntas";
+            document.getElementById("contenido").appendChild(contenedor);
+        }
+        actualizarContenido(contenedor.innerHTML += `
+            <h2>Respuestas a las preguntas del Laboratorio 4</h2>
+            <article>
+                <h4>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</h4>
+                <b>Diferencias:</b>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• Java está orientado a objetos y está fuertemente tipado. Javascript es un lenguaje de scripting interpretado que está débilmente tipado.</li>
+                    <li style="text-align: justify;">• Java se ejecuta en la Máquina Virtual de Java. Javascript se ejecuta en navegadores web.</li>
+                    <li style="text-align: justify;">• El código fuente de Java se compila en bytecode antes de ejecutarse. El código fuente de Javascript es interpretado directamente por el navegador o motor  de JavaScript.</li>
+                    <li style="text-align: justify;">• Java, como ya mencioné, está fuertemente tipado, lo que implica que los tipos deben declararse explícitamente. Javascript, al ser débilmente tipado, los tipos se asignan dinámicamente.</li>
+                    <li style="text-align: justify;">• Java se usa para aplicaciones de escritorio, móvil, servidores y sistemas empresariales. Javascript se usa para el desarrollo web, servidores con Node.js y para aplicaciones móviles híbridas.</li>
+                    <li style="text-align: justify;">• Javascript aguanta múltiples hilos de ejecución. Javascript maneja tareas de forma asíncrona.</li>
+                </ul>
+                <b>Semejanzas:</b>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• Ambos tienen una sintaxis parecida al lenguaje de programación C, donde ambos usan llaves “{}” para definir bloques de código, y usan if, for, while, switch, entre estructuras parecidas.</li>
+                    <li style="text-align: justify;">• Son lenguajes multiplataforma, solo que Java se ejecuta en cualquier programa con JVM y JavaScript se ejecuta en cualquier navegador que sea moderno y en servidores con Node.js.</li>
+                    <li style="text-align: justify;">• Ambos funcionan estando orientados a objetos; pues Java usa clases y objetos tradicionalmente mientras que Javascript, aunque se enfoque más en prototipos, permite igualmente trabajar con clases.</li>
+                    <li style="text-align: justify;">• Ambos se aplican en el desarrollo web, pero Java es para el backend y Javascript para el frontend (pero igual se usa en el backend cuando se le usa en Node.js).</li>
+                </ul>
+                <p style="text-align: justify;"> En conclusión, Java y Javascript don dos lenguajes que, aunque parecen parecidos, son muy distintos. Java es más estructurado y tipado mientras que JavaScript es más flexible y dinámico. Aparte, los fines para los que se usan los hacen muy distintos, pues Java se enfoca en aplicaciones empresariales, móviles y sistema complejos mientras que JavaScript domina más el desarrollo web y las aplicaciones asíncronas.</p>
+                <a href="https://universidadeuropea.com/blog/diferencias-entre-java-y-javascript/#:~:text=Java%20es%20un%20lenguaje%20de,lenguaje%20compilado%20y%20JavaScript%20interpretado" target="_blank">Universidad Europea (2022). “Diferencia entre Java y JavaScript”. Recuperado de: https://universidadeuropea.com/blog/diferencias-entre-java-y-javascript/#:~:text=Java%20es%20un%20lenguaje%20de,lenguaje%20compilado%20y%20JavaScript%20interpretado</a>
+                <p></p>
+                <a href="https://www.hackaboss.com/blog/diferencias-javascript-java" target="_blank">Luis Meza (2025). “¿Qué diferencias hay entre Java y JavaScript?”. Recuperado de: https://www.hackaboss.com/blog/diferencias-javascript-java</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• <b>getFullYear():</b> Devuelve el año de la fecha en un formato de cuatro dígitos.</li>
+                    <li style="text-align: justify;">• <b>getMonth()</b>: Devuelve el número del mes (de 0 a 11, donde 0 es enero y 11 es diciembre).</li>
+                    <li style="text-align: justify;">• <b>getDate():</b> Devuelve el día del mes (de 1 a 31).</li>
+                    <li style="text-align: justify;">• <b>getDay():</b> Devuelve el día de la semana (de 0 a 6, donde 0 es domingo y 6 es sábado).</li>
+                    <li style="text-align: justify;">• <b>toISOString():</b> Devuelve la fecha en formato ISO 8601 (YYYY-MM-DDTHH:mm:ss.sssZ). Aquí, el YYYY representa el año con cuatro dígitos, el MM representa los meses, DD el día, T separa la fecha de la hora, HH representa las horas, mm los minutos, ss los segundos, sss los milisegundos y Z la zona horaria. Se suele usar para bases de datos y APIs.</li>
+                </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">MDN Web Docs (S.F.). “Date”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h4>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• <b>push():</b> Este método añade uno o más elementos al final del arreglo y devuelve la nueva longitud de este.</li>
+                    <li style="text-align: justify;">• <b>pop():</b> Este método elimina el último elemento del arreglo y devuelve el elemento eliminado.</li>
+                    <li style="text-align: justify;">• <b>shift():</b> Este método elimina el primer elemento del arreglo y devuelve el elemento eliminado.</li>
+                    <li style="text-align: justify;">• <b>unshift():</b> Este método añade uno o más elementos al inicio del arreglo y devuelve la nueva longitud.</li>
+                    <li style="text-align: justify;">• <b>map():</b> Este método recorre el array y crea un nuevo array con los valores transformados según la función que se le pida.</li>
+                    <li style="text-align: justify;">• <b>find():</b> Encuentra el primer elemento que cumple con una condición.</li>
+                    <li style="text-align: justify;">• <b>sort():</b> Ordena los elementos del arreglo.</li>
+                </ul>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank">MDN Web Docs (S.F.). “Array”: Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Cómo se declara una variable con alcance local dentro de una función?</h4>
+                <p style="text-align: justify;">Primero se debe crear la función. Dentro de esta se debe de crear la variable, ya sea con let para 
+                    que sea variable o const para que sea constante. Una vez creadas dentro de su respectiva función podrán ser 
+                    usadas sólo y únicamente dentro de la función en la que están, pues fuera de esta no existirán. En el caso de 
+                    var no es muy recomendable usarla ya que tiene alcance de función y no de bloque, lo que puede llegar causar 
+                    problemas de accesibilidad y otros tipos de errores, así que ese tipo de variable no es recomendable usarla 
+                    como variable local dentro de una función.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types" target="_blank">MDN Web Docs (S.F.) “Grammar and types”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types</a>
+                <p></p>
+            </article>
+
+            <article>
+                <h4>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h4>
+                <p style="text-align: justify;">Las variables globales pueden ser accedidas y modificadas dentro de cualquier función, lo que puede generar problemas a la hora de trabajar con el mantenimiento,  seguridad y el rendimiento. Algunos ejemplos de estos problemas pueden ser:</p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• Existe el riesgo de que se sobreescriba en la variable accidentalmente, afectando al resto del código que trabaja con esa variable.</li>
+                    <li style="text-align: justify;">• Dificulta la depuración y el mantenimiento del código, ya que el exceso de variables globales hace que el código sea menos predecible , pues cualquier parte del código podría cambiar el valor que tengan debido al uso de este tipo de variables.</li>
+                    <li style="text-align: justify;">• El rendimiento del programa se puede ver gravemente afectado, pues al tener las mismas variables en memoria todo el tiempo de ejecución puede consumir recursos innecesariamente.</li>
+                    <li style="text-align: justify;">• Complica el reutilizar el código ya que, al depender todo el código de las mismas variables globales, no se puede reutilizar tan fácil el código sin afectar al resto del código que no deseas usar pero que son dependientes de esas variables globales.</li>
+                </ul>
+                <p style="text-align: justify;">En conclusión, las variables globales no se deberían de usar tanto, pues para eso es mejor trabajar con variables locales como las ya mencionadas let y const dentro de sus respectivas funciones. Y si llega a ser necesaria una variable global, es mejor usar una variable de tipo const y objeto para disminuir los riegos de los problemas ya mencionados.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types" target="_blank">MDN Web Docs (S.F.) “Grammar and types”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types</a>
+                <p></p>
+            </article>
+
+            <h2>Respuestas a las preguntas del Laboratorio 5</h2>
+            <article>
+                <h4>Describir el diseño de materiales</h4>
+                <p style="text-align: justify;">En el contexto de frameworks para el desarrollo web, el Material Design (o diseño de materiales) 
+                    se enfoca en la idea de que el diseño de una página web debe simular cómo los objetos y las superficies 
+                    interactúan con el usuario en un espacio tridimensional, utilizando sombras, transiciones y otras características 
+                    visuales.</p>
+                <p style="text-align: justify;">Entre sus principales características se encuentran:</p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• El uso de <b>sombras y capas</b> para dar una sensación de profundidad y jerarquía a los elementos de la interfaz. Por ejemplo, los elementos más cercanos al usuario (como botones) son de un color más oscuro y con mayor sombra mientras que los elementos más lejanos son de sombras más suaves.</li>
+                    <li style="text-align: justify;">• Añade <b>animaciones y transiciones suaves</b> para mejorar el movimiento de la página y la experiencia del usuario.</li>
+                    <li style="text-align: justify;">• Enfatiza la "coherencia entre los diseños" de las interfaces en la página, de modo que las aplicaciones sean fáciles de reconocer y entender. Esto incluye patrones de diseño comunes como botones flotantes, menús desplegables, y una estructura de navegación clara.<li>
+                    <li style="text-align: justify;">• Realiza sugerencias sobre las <b>paletas de colores</b> de la página para mantener una tipografía clara y legible, de modo que los colores también sean armónicos entre ellos.
+                    <li style="text-align: justify;">• Busca mejorar la interactividad que tienen los usuarios en la página  con botones, menús u otros componentes interactivos.<li>
+                </ul>
+                <p>Ahora, en el mundo de los frameworks, hay varios que implementan el Material Design para facilitar la creación de aplicaciones web y móviles, entre los cuales encontramos ejemplos como:</p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify;">• Materialize (el cual usé para este laboratorio)<li>
+                    <li style="text-align: justify;">• Angular Material<li>
+                    <li style="text-align: justify;">• Vuetify<li>
+                    <li style="text-align: justify;">• React Material-UI<li>
+                </ul>
+                <p style="text-align: justify;">Por lo que, de forma resumida, el material design es un conjunto de reglas o directrices que se usan para crear interfaces que sean visualmente atractivas, intuitivas y funcionales, usando como bases algunos principios que ya mencioné anteriormente, como lo son las sombras, animaciones o la interactividad.</p>
+                <a href="https://keepcoding.io/blog/que-es-material-design/" target="_blank">Jose Luis Bustos (2024). “¿Qué es el material design?”. Recuperado de: https://keepcoding.io/blog/que-es-material-design/</a>
+                <p></p>
+                <a href="https://tuatara.co/blog/diseno/material-design/" target="_blank">Tuatara (S.F.). “¿Qué es Material Design”. Recuperado de: https://tuatara.co/blog/diseno/material-design/</a>
+                <p></p>
+                <a href="https://www.deustoformacion.com/blog/diseno-produccion-audiovisual/que-es-material-design" target="_blank">Susana Perdomo (2017). “¿Qué es el Material Design?”. Recuperado de: https://www.deustoformacion.com/blog/diseno-produccion-audiovisual/que-es-material-design</a>
+            </article>
+        `);
+        contenedor.style.display = "block";
+    }
+    </script>
+</body>
+</html>
