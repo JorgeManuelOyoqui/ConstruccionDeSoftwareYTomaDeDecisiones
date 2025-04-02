@@ -3,14 +3,17 @@ Repositorio donde estaré subiendo todos mis trabajos, laboratorios y proyectos 
 
 ## Bitácora
 
-### Laboratio 01
+### Laboratorio 01
 En este primer laboratorio, cree una página HTML con Visual Studio Core y verifiqué su estructura con validator.w3.org. Más aparte, respondí las preguntas que me solicitaba la práctica y añadí los datos perosnales que me pidieron.
 
-### Laboratio 02
+### Laboratorio 02
 Este laboratorio fue sencillo, pues ya tenía instalado git, igual ya tenía una cuenta en GitHub y sólo me quedó crear un repositorio especial para esta materia y sus entregables, a lo que al final tan sólo subí el archivo del laboratorio 1 y una captura de pantalla que muestre justamente la existencia de este repositorio (auqnue supongo que si estás leyendo esto ya deberías saber que. en efecto, este repositorio existe y es público para que lo leas).
 
-### Laboratio 03
+### Laboratorio 03
 Agregué y programé un archivo CSS para el archivo del Laboratio 1 para que tuviera un estilo más atractivo. Igualmente, luego de terminar de crear el archivo CSS, le cree una copia la cual minimicé con la siguiente página: http://cssminifier.com/, de modo que mi código pudiera estar mejor optimizado. Lamnetablemnte en la minimización hubo un pequeño error, pues los párrafos del footer no tenían el mismo diseño que tenía originlamente, por lo que tuve que agregar líneas de código extra sólo para corregir ese error, pero aparte de eso todo salió bien con la minimización. De todos modos subí ambos archis CSS para tenerlos como base cuando quiera hacer modificaciones al diseño y subí el documento actualizado del HTML para que ahora tenga diseño y tenga las respuestas a las preguntas de este laboratorio.
 
-### Laboratio 04
+### Laboratorio 04
 Se agrega un archivo completamente nuevo para el laboratorio 4, donde implemento el uso de javascript para desarrollar distintas funciones que realicen las actividades que me piden. En esta práctica no negaré que tuve varias complicaciones, pero al resolverlas pude aprender mucho de ellas. Al final, este código tiene dos archivos CSS minimizados: uno para todo el código y otro destinado sólo a la sección donde respondo a las preguntas del laboratorio 4; donde esto es así por que me resultó más fácil, y, al estar minimizados ambos archivos, creo que no va afectar mucho al rendimiento. Todavía se puede encontrar uno que otro bus en la sección de "Respuestas Lab04", pero siempre y cuando el usuario se limite a usar su respectivo botón y a usar el botón "Regresar" o el botón de la función que quiera implementar no debería haber ningún problema. (Es que se queda un botón conocido como "Repetir" que dejo en las demás funciones, pero que con el texto de las respuestas también se queda y termina duplicando el texto y los botones. Por eso menciono este problema, pero realmente no es tan grave y se corrije al presionar el botón "Regresar").
+
+### Laboratorio 05
+Se agrega el laboratorio 5, el cual se realizó sobre el laboratorio 4, cambiando el diseño, agregando la pregunta que pedía el laboratorio 5 y arreglando el problema quese tenía en el laboratorio 4 con que se mostrara varias veces la parte de mostrar las respuestas a las preguntas de ese laboratorio, de modo que se implementó un nuevo diseño usando el framework Materialize (o sea, se usó la versión minimizada del CSS que contenía) y se corrigieron errores que tenía el laboratorio 4. 
