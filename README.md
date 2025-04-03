@@ -17,3 +17,14 @@ Se agrega un archivo completamente nuevo para el laboratorio 4, donde implemento
 
 ### Laboratorio 05
 Se agrega el laboratorio 5, el cual se realizó sobre el laboratorio 4, cambiando el diseño, agregando la pregunta que pedía el laboratorio 5 y arreglando el problema quese tenía en el laboratorio 4 con que se mostrara varias veces la parte de mostrar las respuestas a las preguntas de ese laboratorio, de modo que se implementó un nuevo diseño usando el framework Materialize (o sea, se usó la versión minimizada del CSS que contenía) y se corrigieron errores que tenía el laboratorio 4. 
+
+### Laboratorio 06
+Se agrega el laboratorio 6, que se trata de un archivo completamente nuevo. Aquí resulevo lo que el laboratorio me pide de hacer un verficiador de contrasñeas, agregándole funcionalidades extras como comprobar si el usuario que intenta ingresar es, en efecto, un persona  através de una prueba de arrastrar un elemento, implemetando lo aprendido en clase y en los textos de programación orientada a eventos. 
+
+### Laboratorio 07
+El Laboratorio 7 es en equipo, por eso no se encunetra aquí, sino más bien en el repositorio de mi equipo.
+
+### Laboratorio 08
+Se agrega el laboratorio 8. El archivo de Lab08EjerciciosyProblemas.js es el que cotiene los ejercicios de promediar un arreglo de números, generar un archivo de texto de un string y agrego el problema de cambiar un númeor entero a un número binario. Los resultados se entregan en la terminal de la plataforma que estés usando. En mi caso, se visualiza en la terminal de Visual Studio Code. Para visualizarlo se debe correr el programa y buscar en el buscador de tu preferencia "http://localhost:3000" . 
+
+El archivo Lab08Server.js usa el laboratorio 6 y lo modifica para trabajar en un servidor local. Los otros dos archivos de Lab08.css y .js respectivamente son los mismos que usé para el Laboratorio 6 pero con un cambio de nombre para adaptarse a este laboratorio. Igualmente, agrego al código la capacidad de que node pueda trabajar con archivos estáticos para que pueda trabajar con el .js y .css que se usaron para darle funcionalidad y estilo a este laboratorio. Para visualizarlo se debe correr el programa y buscar en el buscador de tu preferencia "http://localhost:4000" . 
