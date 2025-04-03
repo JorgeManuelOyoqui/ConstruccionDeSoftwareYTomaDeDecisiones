@@ -27,4 +27,7 @@ El Laboratorio 7 es en equipo, por eso no se encunetra aquí, sino más bien en 
 ### Laboratorio 08
 Se agrega el laboratorio 8. El archivo de Lab08EjerciciosyProblemas.js es el que cotiene los ejercicios de promediar un arreglo de números, generar un archivo de texto de un string y agrego el problema de cambiar un númeor entero a un número binario. Los resultados se entregan en la terminal de la plataforma que estés usando. En mi caso, se visualiza en la terminal de Visual Studio Code. Para visualizarlo se debe correr el programa y buscar en el buscador de tu preferencia "http://localhost:3000" . 
 
+### Casos de Estudio 2
+Subo el ejercicio de crear los modelos de entidad relación de los casos de estudio de Farmacéutica y Liga de Futbol a mi repositorio individual.
+
 El archivo Lab08Server.js usa el laboratorio 6 y lo modifica para trabajar en un servidor local. Los otros dos archivos de Lab08.css y .js respectivamente son los mismos que usé para el Laboratorio 6 pero con un cambio de nombre para adaptarse a este laboratorio. Igualmente, agrego al código la capacidad de que node pueda trabajar con archivos estáticos para que pueda trabajar con el .js y .css que se usaron para darle funcionalidad y estilo a este laboratorio. Para visualizarlo se debe correr el programa y buscar en el buscador de tu preferencia "http://localhost:4000" . 
