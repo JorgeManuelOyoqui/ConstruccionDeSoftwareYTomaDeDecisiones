@@ -1,0 +1,27 @@
+/*Código para hacer las distintas consultas a la base de datos*/
+
+/*Consulta Tuberías*/
+select Clave, Descripcion, Precio
+from materiales
+where Descripcion like '%Tub%';
+
+/*Consulta Caros*/
+select Clave, Descripcion, Precio
+from materiales
+where Precio > 300;
+
+/*Consulta Proveedores de Ladrillos*/
+select m.Clave, p.RazonSocial
+from materiales m inner join entregan e on m.clave = e.clave
+inner join proveedores p on e.RFC = p.RFC
+where m.Descripcion like '%Ladrillos%';
+
+
+/*Consulta Pinturas 98*/
+select m.descripcion, p.razonsocial, pr.denominacion, e.fecha, e.cantidad
+from materiales m, entregan e, proveedores p, proyectos pr
+where m.Clave = e.clave 
+and e.RFC = p.RFC 
+and e.Numero = pr.Numero
+and m.Descripcion like '%Pintura%'
+and e.fecha like '%1998%'
