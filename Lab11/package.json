@@ -1,0 +1,28 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "Laboratorio 11",
+  "main": "package.json",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeManuelOyoqui/ConstruccionDeSoftwareYTomaDeDecisiones.git"
+  },
+  "keywords": [
+    "J191005O"
+  ],
+  "author": "Jorge Oyoqui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgeManuelOyoqui/ConstruccionDeSoftwareYTomaDeDecisiones/issues"
+  },
+  "homepage": "https://github.com/JorgeManuelOyoqui/ConstruccionDeSoftwareYTomaDeDecisiones#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
