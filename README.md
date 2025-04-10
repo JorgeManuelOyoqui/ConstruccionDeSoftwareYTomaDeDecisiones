@@ -37,3 +37,10 @@ Se agrega el laboratorio 9. Se realizaron las instrucciones solicitadas, se cre�
 
 ### Caso de Estudio 3
 Subo el ejercicio de crear un diagrama de clases haciendo uso formal de la nomenclatura UML para modelar un videojuego a mi repositorio individual. Si revisan los repositorios de mis compañeros de equipo, notarán que son los mismos que el que yo tengo pues esta actividad la realizamos juntos, y luego lo subimos a nuestros repositorios individuales.
+
+### Laboratorio 09
+Agrego el laboratorio 10. Para este laboratorio decidí reutilizar el código del Laboratorio 08, donde igualmente uso sus .js y .css (que se mantienen con el mismo nombre). Realicé los cambios necesarios y agregué tres nuevas rutas diferentes:
+- /acerca: Redirige al usaurio a una ruta que muestra sólo un poco de texto y ya.
+- /formulario: Redirige al usuario a un formulario donde se le pide que escriba su nombre y un mensaje, el cual al ser enviado se manda en formato de texto al servidor
+- /procesar: Es el único que no funciona si se hace directo en la red, y requiere, recomendablemente, Postman para hacerle post a la dirección http://localhost:4000/procesar para mostrar su información.
+Aparte, si no se encuentra la página, se envía un error 404 que indica qué pasó. Esto se puede probar al poner en el buscador de tu preferencia: http://localhost:4000/procesar. que te llevará a aquella ruta que no funciona más que en una app como Postman.
