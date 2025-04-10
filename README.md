@@ -38,12 +38,6 @@ Se agrega el laboratorio 9. Se realizaron las instrucciones solicitadas, se cre�
 ### Caso de Estudio 3
 Subo el ejercicio de crear un diagrama de clases haciendo uso formal de la nomenclatura UML para modelar un videojuego a mi repositorio individual. Si revisan los repositorios de mis compañeros de equipo, notarán que son los mismos que el que yo tengo pues esta actividad la realizamos juntos, y luego lo subimos a nuestros repositorios individuales.
 
-### Laboratorio 09
-Se agrega el laboratorio 9. Se realizaron las instrucciones solicitadas, se creó una base de datos con las respectivas tablas y columnas solicitas y se insertaron sus datos desde los .csv respectivos de cada tabla. Se creo un script de SQL y escribí el código que se requería para hacer las consultas. Para esta entrega subo un .pdf quecontiene las imrpesiones de pantalla del código que usé para las consultas y los resultados de estas, al igual que un archivo .txt para copiar y pegar directamente el código por si lo desearan usar, para no tener que copiarlo todo a mano.
-
-### Caso de Estudio 3
-Subo el ejercicio de crear un diagrama de clases haciendo uso formal de la nomenclatura UML para modelar un videojuego a mi repositorio individual. Si revisan los repositorios de mis compañeros de equipo, notarán que son los mismos que el que yo tengo pues esta actividad la realizamos juntos, y luego lo subimos a nuestros repositorios individuales.
-
 ### Laboratorio 10
 Agrego el laboratorio 10. Para este laboratorio decidí reutilizar el código del Laboratorio 08, donde igualmente uso sus .js y .css (que se mantienen con el mismo nombre). Igualmente incluyo un archivo de texto del resultado de mandar el texto desde Postman usando POST. Realicé los cambios necesarios y agregué tres nuevas rutas diferentes (Antes que nada, quiero avisar que estoy hablando de la segunda versión del laboratorio 10, luego de corregir el aspecto de que /procesar debía hcaer también el formulario, mandarlo y guardarlo en la dirección del servidor, pero ya explciaré en un moemnto cómo hacer eso):
 
