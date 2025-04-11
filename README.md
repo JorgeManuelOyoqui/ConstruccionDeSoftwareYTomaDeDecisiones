@@ -56,12 +56,14 @@ Se añade el laboratorio 11, donde este trabaja con el laboratiro 10, donde se a
 
 "npm start"
 
-Si no tienes instalado ni package.json no Express, entonces escribe esto primero en la terminal:
+Si no tienes instalado ni package.json ni Express, entonces escribe esto primero en la terminal:
 
 // Para descargar package.json
 npm init -y
-// Para descragar Express
+// Para descargar Express
 npm install express
 
-Y leugo intenta de neuvo escribir npm start.
+Y luego intenta de nuevo escribir npm start.
 
+### Laboratorio 12
+Se añade el laboratorio 12, donde ahora modifico la estructura del código haciendo una nueva carpeta llamada public para los archivos estáticos CSS y JS. Igualmente agrego un nuevo archivo /templatingEngines en el que vienen las respuestas a la pregunta de este laboratorio. Pero, principalmente, adapto el código del laboratorio 11 (que fue el que usé para este laboratorio) para que fuera dinámico con EJS, para hacer un uso efectivo de los partials, refactoricé la aplicación para que mantuviera la funcionalidad pero trabajando con un motor de vistas (que si mal no recuerdo, se agregó desde el Lab11) y mejoré la aplicación para que en lugar de guardar los datos en un archivo, ahora también los despliegue en una de las páginas, que en este caso sería la página /formulario, donde, luego de enviar un mensaje, se ven todos los mensajes enviados en orden de antiguedad de mayor a menor.
