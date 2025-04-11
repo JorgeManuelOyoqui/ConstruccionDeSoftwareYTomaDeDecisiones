@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+    <html lang="es"> 
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Validador de Contraseñas</title> 
+        <link rel="stylesheet" href="Lab08.css"> 
+    </head>
+    <body>
+        <div class="container"> 
+            <h2>Validador de Contraseñas</h2> 
+
+            <!-- Campo para ingresar la contraseña -->
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password">
+            <div class="strength-meter"><span></span></div>
+            <small id="password-requirements"></small>
+
+            <br>
+
+            <!-- Campo para confirmar la contraseña -->
+            <label for="confirm-password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm-password">
+            <small id="match-message"></small>
+
+            <!-- Área de Drag-and-Drop -->
+            <div id="drag-container">
+                <p id="verification-message">Arrastra el ítem a la zona para verificar que eres humano.</p>
+                <div id="draggable" draggable="true">
+                    <p>Arrástrame</p>
+                </div>
+                <div id="drop-zone"> <!-- Zona donde el usuario debe soltar el elemento arrastrado -->
+                    <p>Zona para soltar el ítem</p> <!-- Mensaje dentro de la zona de drop -->
+                </div>
+            </div>
+        </div>
+
+        <script src="Lab08.js"></script>
+
+        <div id="respuestas-container">
+            <h2>Respuestas a las preguntas del Laboratorio 6</h2>
+                <article>
+                    <h4>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h4>
+                    <ul>
+                        <li>Puede mejorar la experiencia del usuario de modo que se pueden validar los datos desde el lado del cliente haciendo que se puedan mostrar posibles errores de validación inmediatamente antes de que los datos lleguen al servidor. Esto puede ahorrar el tiempo de los usuarios al evitar que tengan que esperar la respuesta del servidor para saber si cometieron un error.</li>
+                        <li>Cómo se validan los datos y se corrigen los errores antes de que lleguen al servidor, se evita sobrecargar al servidor con solicitudes innecesarias de todos estos datos erróneos, mejorando el rendimiento general de la aplicación.</li>
+                        <li>Al usar JavaScript se puede tener un control prácticamente total sobre las reglas de validación, de modo que el código se puede adaptar a diferentes tipos de requisitos de la aplicación dependiendo de las necesidades del cliente.</li>
+                        <li>Puede llegar a prevenir errores que podrían ser aprovechados en ataques.</li>
+                        <li>Se debe tomar en cuenta que, aunque JavaScript es útil para validar datos desde el lado del cliente, siempre se debe realizar una validación adicional en el servidor para evitar cualquier error.</li>
+                    </ul>
+                    <p>Por lo que, en conclusión, JavaScript resulta una herramienta muy útil pero que se debe acompañar con una validación segura y robusta por parte del servidor para asegurar la seguridad y fiabilidad de los datos.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation" target="_blank">MDN Web Docs (S.F.) “Validación de formularios del lado del cliente”. Recuperado de: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation</a>
+                    <p></p>
+                </article>
+
+                <article>
+                    <h4>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h4>
+                    <p>Existen varias formas en la que esta seguridad que genera JavaScript pueda ser saltada, entre las cuales algunos ejemplos serían:</p>
+                    <ul>
+                        <li><b>Deshabilitado JavaScript en el navegador</b>, de modo que, si JavaScript está deshabilitado, las validaciones del lado del cliente no se ejecutarán y los datos se enviarán sin ser validados.</li>
+                        <li><b>Manipulando el código de JavaScript</b>, de modo que usuarios técnicos podrían manipular y cambiar las reglas de validación , siendo particularmente sencillo de realizar y resultado peligroso en la seguridad del sistema y los datos.</li>
+                        <li>Hay <b>herramientas y extensiones</b> de navegador que permiten <b>alterar el comportamiento de JavaScript</b>, donde los atacantes podrían utilizar estas herramientas para modificar los datos de los formularios antes de enviarlos, saltándose las validaciones de JavaScript.</li>
+                        <li>Igualmente, se podrían <b>manipular las solicitudes HTTP</b>, donde un atacante podría interceptar y modificar los datos de un HTTP luego de ser validados por JavaScript antes de que lleguen a la validación del servidor.</li>
+                    </ul>
+                    <p>Por eso también es importante añadir esta segunda capa de protección usando una validación en el servidor, por si alguno de estos ataques llegara a suceder, pues el servidor es el único lugar seguro donde se pueden aplicar restricciones porque el atacante no tiene control sobre él. Así que, como menciono, de ahí su importancia.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank">MDN Web Docs (S.F.) “Seguridad en la web”. Recuperado de: https://developer.mozilla.org/en-US/docs/Web/Security</a>
+                    <p></p>
+                </article>
+
+                <article>
+                    <h4>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h4>
+                    <p>Pues a pesar de que se puede saltar esta seguridad, sigue siendo útil este tipo de seguridad del lado del cliente por varios motivos, donde algunos ejemplos serían:</p>
+                    <ul>
+                        <li>Como ya había mencionado, mejora la experiencia del usuario dando retroalimentación inmediata y en tiempo real sobre si cometió algún error en su solicitud al servidor.</li>
+                        <li>Reduce la carga del servidor al evitar que le lleguen solicitudes con errores que tenga que procesar, mejorando de forma general su rendimiento al quitarle esa pequeña carga.</li>
+                        <li>Puede prevenir que el usuario cometa errores comunes como colocar un valor no permitido, de modo que se le avisa inmediatamente al usuario sobre ese error para que lo pueda corregir y no mande una solicitud errónea.</li>
+                        <li>Mejora la seguridad básica haciendo que los ataques automáticos sean más difíciles de realizar. De modo que,  aunque un atacante puede eludir estas validaciones, realizar la validación del lado del cliente hace que sea un poco más difícil para un usuario no técnico realizar ataques.</li>
+                        <li>Ayuda a reducir el tráfico de red innecesario por medio de evitar que se envíen datos inválidos al servidor, como ya comentaba.</li>
+                    </ul>
+                    <p>Así que sí, es útil, pues ayuda a limpiar  y verificar los archivos que se mandan al servidor, pero no se puede depender sólo de esta seguridad ya que es muy fácil de evadir para los usuarios técnicos maliciosos.</p>
+                    <p></p>
+                    <p>En conclusión, la validación de JavaScript es una buena práctica porque mejora la experiencia del usuario, reduce la carga en 
+                        el servidor, previene errores comunes y optimiza el rendimiento, pero nunca debe ser la única medida de seguridad, ya que los 
+                        usuarios pueden eludirla. La seguridad real debe implementarse siempre en el servidor, donde los datos son finalmente procesados 
+                        y validados de manera confiable.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation" target="_blank">MDN Web Docs (S.F.) “Validación de formularios del lado del cliente”. Recuperado de: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation</a>
+                    <p></p>
+                </article>
+        </div>
+    </body>
+    </html>
