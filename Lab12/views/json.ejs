@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('includes/head') %>
+<body>
+    <h1>Package.json</h1>
+    <h4>¿Qué es el archivo package.json?</h4>
+    <p>Es un archivo de configuración que se encuentra en la raíz de un proyecto que se desarrolla con Node.js. Sirve como una especie de identidad para la aplicación, ya que contiene información sobre el proyecto, sus dependencias y scripts que se pueden ejecutar.</p>
+    <p></p>
+    <h4>¿Para qué sirve?</h4>
+    <ul>
+        <li><b>Identificación del proyecto:</b> donde contiene datos para identificar el proyecto, como por ejemplo los datos como el nombre del proyecto, la versión, el autor y una descripción.</li>
+        <li><b>Gestión de dependencias:</b> indica qué paquetes de Node necesita el proyecto para funcionar correctamente. Por ejemplo, si un archivo usa Express, se listará como dependencia (dependencia por que depende de algo, en este caso de Express).</li>
+        <li><b>Automatiza de tareas:</b> donde permite definir comandos (o scripts), como por ejemplo npm start (para iniciar un paquete), npm version (para mostrar la versión instalada actual es la computadora), npm install (para instalar paquetes), etc.</li>
+        <li><b>Control de versiones:</b> pues se asegura de que todos los archivos trabajen en las mismas versiones de los paquetes cuando son del mismo proyecto.</li>
+    </ul>
+    <h4>Conclusión</h4>
+    <p>En conclusión, el package.json es escencial para cualquier proyecto que trabaje con Nodeya que registra datos importantes acerca de un proyecto, necesarios antes de publicarlo en NPM, a la vez que también define atributos funcionales que NPM utiliza para instalar dependencias, ejecutar scripts e identificar el punto de entrada a nuestro paquete.</p>
+    <p></p>
+    <h4>Referencias Bibliográficas</h4>
+    <a href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json" target="_blank">hey(node) (S.F). "What Is package.json?". Recuperado de: https://heynode.com/tutorial/what-packagejson/#:~:text=Recap-,The%20package.,entry%20point%20to%20our%20package</a>
+    <p></p>
+    <a href="https://kinsta.com/es/base-de-conocimiento/que-es-npm/" target="_blank">Kinsta (2025). "¿Qué es un npm? Una Introducción al Gestor de Paquetes de Node". Recuperado de: https://kinsta.com/es/base-de-conocimiento/que-es-npm/</a>
+    <p></p>
+    <a href="https://lenguajejs.com/npm/administracion/package-json/" target="_blank">npm (S.F). "El archivo package.json". Recuperado de: https://lenguajejs.com/npm/administracion/package-json/</a>
+    <p></p>
+    <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Introduction" target="_blank">MDN web docs (S.F.). "Express/Node introducton". Recuperado: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs/Introduction</a>
+    <p></p>
+    <a href="https://docs.npmjs.com/cli/v9/configuring-npm/package-json" target="_blank">npc Docs (2023). "package.json". Recuperado de: https://docs.npmjs.com/cli/v9/configuring-npm/package-json</a>
+    <p></p>
+    <a href="/">Volver a inicio</a>
+
+    <!-- Para el script JS y el estilo CSS -->
+    <link rel="stylesheet" href="/css/Lab08.css">
+    <script src="/js/Lab08.js" defer></script>
+
+    <!-- Footer -->
+    <%- include('includes/footer') %>
+</body>
+</html>

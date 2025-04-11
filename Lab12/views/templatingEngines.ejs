@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('includes/head') %>
+<body>
+    <h1>templatingEngines</h1>
+    <h4>¿Qué es un Templating Engine?</h4>
+    <p>Un Templating Engine (o motor de plantillas) es una herramienta que permite generar HTML de forma dinámica a partir 
+        de datos que se proporcionan desde el servidor, donde en lugar de escribir manualmente todo el HTML en cada ruta, se usan 
+        plantillas que contienen marcadores o etiquetas especiales que se reemplazan con datos reales al momento de 
+        renderizar la vista.</p>
+    <p></p>
+    <h4>¿Para qué sirven?</h4>
+    <ul>
+        <li>Puede servir para separar la lógica de presentación (para mostrar los datos al usuario) y lógica de negocio (las reglas de la empresa para la página).</li>
+        <li>Se usa para reutilizar fragmentos de código HTM, como por ejemplo: encabezados, menús, pies de página, etc.</li>
+        <li>Facilitar la renderización dinámica de contenido, como listas, usuarios, productos, etc. (Parecido a lo que se hizo para este laboratorio 12)</li>
+        <li>Ayuda a que el código sea más limpio y mantenible. (Justo por su reutilización)</li>
+        <li>Según el tipo de Templating Engine, se puede mejorar el rendimiento de la página a través de acelerar procesos.</li>
+    </ul>
+    <p></p>
+    <h4>Ejemplos de Templating Engines para Node.js</h4>
+    <ul>
+        <li><n>EJS:</n> contiene una sintaxis similar a HTML que incluye el <%= %> que sirve para poder insertar variables. Es fácil de aprender y es muy usado al trabajar con Express. (EBIS, 2024)</li>
+        <li><n>Pug:</n>  motor de plantillas con una sintaxis minimalista y legible que permite escribir HTML de manera más concisa. Es útil para mantener limpia la plantilla de códigoy para generar menos código HTML repetitivo. (EBIS, 2024)</li>
+        <li><n>Mustache:</n> Un motor de plantillas que se enfoca en la simplicidad. Su sintaxis es mínima y evita la lógica compleja dentro de las plantillas. Mustache se utiliza para generar contenido HTML de forma rápida y eficiente y es compatible con muchos lenguajes y frameworks. (EBIS, 2024)</li>
+        <li><n>Handlebars:</n> Basado en el motor Mustache, Handlebars extiende la funcionalidad de Mustache añadiendo características como helpers y expresiones condicionales. Es conocido por su enfoque en mantener la lógica fuera de las plantillas y por su capacidad para generar HTML dinámico pero con una sintaxis clara. (EBIS, 2024)</li>
+        <li><n>Nunjucks:</n> lenguaje de plantillas para JavaScript rico y potente, de modo que ayuda a ejecutar de forma rápida e implacable estas platillas. (Alex Ivanovs, 2023)</li>
+    </ul>
+    <p></p>
+    <h4>Referencias Bibliográficas</h4>
+    <a href="https://www.ebiseducation.com/template-engine-que-es-y-como-crearlo-guia-paso-a-paso" target="_blank">EBIS (2024). "Template Engine: Qué es y Cómo crearlo (Guía Paso a Paso)". Recuperado de: https://www.ebiseducation.com/template-engine-que-es-y-como-crearlo-guia-paso-a-paso</a>
+    <p></p>
+    <a href="https://keepcoding.io/blog/que-son-los-template-engines/" target="_blank">Alberto Casero (2024). "¿Qué son los templates engines?". Recuperado de: https://keepcoding.io/blog/que-son-los-template-engines/</a>
+    <p></p>
+    <a href="https://colorlib.com/wp/top-templating-engines-for-javascript/" target="_blank">Alex Ivanovs (2023). "Los 13 mejores motores de plantillas para JavaScript para mejorar y simplificar tu flujo de trabajo (2023)". Recuperado de: https://colorlib.com/wp/top-templating-engines-for-javascript/</a>
+    <p></p>
+    <a href="/">Volver a inicio</a>
+
+    <!-- Para el script JS y el estilo CSS -->
+    <link rel="stylesheet" href="/css/Lab08.css">
+    <script src="/js/Lab08.js" defer></script>
+
+    <!-- Footer -->
+    <%- include('includes/footer') %>
+</body>
+</html>
