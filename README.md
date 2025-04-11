@@ -49,5 +49,19 @@ Agrego el laboratorio 10. Para este laboratorio decidí reutilizar el código de
   
 Aparte, si no se encuentra la página, se envía un error 404, e indica que no se encontró la página (o sea, se explcia el error). Esto se puede probar al poner en el buscador de tu preferencia (ggogle, internet explorer, etc): http://localhost:4000/procesar, que te llevará a la ruta /procesar que no funciona más que en una app como Postman.
 
+Para correr este programa, escribe en la terminal: "node Lab10Server.js".
+
 ### Laboratorio 11
-Se añade el laboratorio 11, donde este trabaja con el laboratiro 10, donde úncamente se agregan más rutas. Una de esta rutas, que sería la ruta /json, es la que contiene la respuesta a la pregunta de : Describe el archivo package.json. Separo mis rutas de .js principal (que sería el Lab11Server.js) y los cambié para que estuvieran dentro de una carpeta llamada routes, que contiene 2 módulos: uno para las rutas principales (que contiene las rutas / (principal), /acerca, /json, /saludo) y otros para las rutas con formularios (/formulario, /procesar). Más allá de eso, sólo mejoré cómo se introducen los archivos estáticos (o sea, los archivos .css y .js) y ya. Ahora, el archivo Lab11Server.js no tiene ninguna ruta, pero sí hacer referencia a los archivos que tienen las rutas, y por eso funciona el programa.
+Se añade el laboratorio 11, donde este trabaja con el laboratiro 10, donde se agregan más rutas para que tenga al menos 5. Una de esta rutas, que sería la ruta /json, es la que contiene la respuesta a la pregunta de : Describe el archivo package.json. Separo mis rutas de .js principal (que sería el Lab11Server.js) y los cambié para que estuvieran dentro de una carpeta llamada routes, que contiene 2 módulos: uno para las rutas principales (que contiene las rutas / (principal), /acerca, /json, /saludo) y otros para las rutas con formularios (/formulario, /procesar). Más allá de eso, sólo mejoré cómo se introducen los archivos estáticos (o sea, los archivos .css y .js). Ahora, para correr la página ya no se usa "node Lab11Server.js", pues al estar trabajando con Node, principalmente con Express, ahora el programa usa el npm de start para correr el programa, facilitando mucho el código que se debe escribir. Así que para correr esta nueva versión que usar Node para ejecutar una versión mejorada del Lab10, escribe en la termina:
+
+"npm start"
+
+Si no tienes instalado ni package.json no Express, entonces escribe esto primero en la terminal:
+
+// Para descargar package.json
+npm init -y
+// Para descragar Express
+npm install express
+
+Y leugo intenta de neuvo escribir npm start.
+
