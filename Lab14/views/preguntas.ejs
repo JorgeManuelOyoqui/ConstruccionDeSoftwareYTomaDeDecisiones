@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preguntas del Laboratorio 13</title>
+  <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+  <h1>Preguntas del Laboratorio 13</h1>
+
+  <article>
+    <h4>¿Qué beneficios encuentras en el estilo MVC?</h4>
+    <ul>
+        <li>- <b>Ayuda a separar responsabilidades</b> a través de dividirlas en distintas secciones según su funcionalidad, como por ejemplo:</li>
+        <ul>
+            <li><b>View:</b> es la interfaz que el usuario ve.</li>
+            <li><b>Model:</b> que maneja los datos y la lógica de la página.</li>
+            <li><b>Controller:</b> que conecta view con model y gestiona las solicitudes de los usuarios.</li>
+        </ul>
+        <li>- <b>Facilita los trabajos colaborativos</b>, ya que, al estar divididas las responsabilidades, pueden dividirse las tareas entre uno o más miembros para estas responsabilidades, lo que resulta muy útil sobre todo en proyectos grandes.</li>
+        <li>- <b>El código se puede reutilizar</b>, de modo que los modelos y controladores pueden usarse en múltiples vistas. Por ejemplo, se pueden mostrar los mismos datos en una página web y en una API sin duplicar lógica.</li>
+        <li>- Al estar bien separado, se vuelve más fácil <b>escalar el programa</b>, de modo que es más fácil agregar nuevas funcionalidades o hacer cambios sin romper otras partes del sistema.</li>
+        <li>- Se pueden realizar pruebas individuales al modelo y al controlador sin necesidad de depender de una interfaz, mejorando así la calidad del software.</li>
+    </ul>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/MVC" target="_blank">MDN Web Docs (S.F.) “MVC”. Recuperado de: https://developer.mozilla.org/en-US/docs/Glossary/MVC</a>
+    <p></p>
+  </article>
+
+  <article>
+    <h4>¿Encuentras alguna desventaja en el estilo arquitectónico MVC?</h4>
+    <ul>
+        <li>- Es más <b>complejo</b> que otros métodos, lo que puede llegar a intimidar, ser inncesario en páginas pequeñas o ser confuso para gente nueva en el tema. </li>
+        <li>- A pesar de la separación de responsabilidades sigue habiendo una <b>gran dependencia entre componentes</b>, por ejemplo: la vista depende del modelo o también el controlador debe coordinar a la vista y al modelo causando una fuerte dependencia entre estos componentes.</li>
+        <li>- Si la organización no es la adecuada, el desarrollo de la página podría <b>no tener una estructura clara</b>, como por ejemplo: que el modelo tenga el código de la vista, la vista tenga el código del modelo o que el controller hasa tareas de más.</li>
+        <li>- Según cual sea el caso, el modelo MVC podría llegar a <b>afectar o disminuir el rendimiento</b> en aplicaciones, sobre todo las que requieren interacción en tiempo real, pues el paso de Model a Controller a View es más lento que un flujo directo (que aunque sea menos seguro sí es más rápido).</li>
+    </ul>
+    <a href="https://developer.mozilla.org/en-US/docs/Glossary/MVC" target="_blank">MDN Web Docs (S.F.) “MVC”. Recuperado de: https://developer.mozilla.org/en-US/docs/Glossary/MVC</a>
+    <a href="https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/overview/asp-net-mvc-overview" target="_blank">Microsoft Build (2025) “ASP.NET MVC Overview”. Recuperado de: https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/overview/asp-net-mvc-overview</a>
+    <p></p>
+  </article>
+</body>
+</html>

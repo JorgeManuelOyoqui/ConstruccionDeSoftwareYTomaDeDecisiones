@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de elementos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Lista de elementos</h1>
+  <ul>
+    <% for(let item of items) { %>
+      <li><%= item.value %></li>
+    <% } %>
+  </ul>
+  <a href="/add">Agregar otro</a>
+</body>
+</html>
