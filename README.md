@@ -89,3 +89,6 @@ Al igual que en el laboratorio 17, este laboratorio fue implementado en el proye
 
 ### Laboratorio 19
 Al igual que el Laboratorio 17 y 18, este laboratorio se implementa en el proyecto para el socioformador. Como ya se mencionó, este archibo es compartido por el Laboratorio 18, por lo que se usa la misma versión del proyecto para ambos (cuya ruta es la misma), e igualmente el documento que indica en qué partes incorporamos el laboratorio 19 en el proyecto viene también en el archivo Explicacion_Laboratorio_18_19.txt. En este caso, el laboratorio sólo implementa la visualización de datos y de interfaz según el ususario debido a ciertas complicacione sy falta de tiempo para implementar otras funciones como agregar datos, modificarlos o eliminarlos según los permisos de rol del usuario, pero eso es algo que sí estaremos implementando a futuro. Las preguntas a este laboratorio se encunetran en este repositorio en la carpeta Lab19.
+
+### Laboratorio 20
+Agrego el Laboratorio 20, donde contesto cada pregunta que me pide y hago todos los sricpts y soicitudes que me piden, mostrando como evidencia tanto los scripts SQL que usé como una captura de pantalla de que en efecto estoy usando el código que dije que usaba y el resultado de la tabla luego de hacer la consulta.
