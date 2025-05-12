@@ -92,3 +92,6 @@ Al igual que el Laboratorio 17 y 18, este laboratorio se implementa en el proyec
 
 ### Laboratorio 20
 Agrego el Laboratorio 20, donde contesto cada pregunta que me pide y hago todos los sricpts y soicitudes que me piden, mostrando como evidencia tanto los scripts SQL que usé como una captura de pantalla de que en efecto estoy usando el código que dije que usaba y el resultado de la tabla luego de hacer la consulta.
+
+### Laboratorio 21
+Hago las consultas que se me solicitan de la base de datos TC2005B_DB
