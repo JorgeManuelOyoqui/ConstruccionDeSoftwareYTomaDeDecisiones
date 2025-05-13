@@ -95,3 +95,6 @@ Agrego el Laboratorio 20, donde contesto cada pregunta que me pide y hago todos 
 
 ### Laboratorio 21
 Hago las consultas que se me solicitan de la base de datos TC2005B_DB
+
+### Laboratorio 23
+Hago los procedures que se me solicitan de la base de datos TC2005B_DB
