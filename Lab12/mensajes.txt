@@ -4,3 +4,34 @@ Mensaje: Lab 12, desde la aplicación :3
 Nombre: Jorge Oyoqui
 Mensaje: Laboratorio 12. ¡Que locura! ¿no?
 ---
+
+
+Pasos para crear una nueva página 
+
+routes
+  Crea: clientes.js
+
+y agrega:
+
+router.get('/formulario', verificarRol(['Administrador', 'Empresa']), async (req, res) => {
+  console.log("Entre a formulario cliente");  
+  res.render('clientes/addClientes');
+ });
+
+
+
+index.js
+ Agregas:
+
+ // Rutas de las tablas
+const clientesRoutes = require('./routes/clientes');
+app.use('/clientes', clientesRoutes);
+
+
+El link es http://localhost:3000/clientes/formulario 
+  --> clientes esta en el index.js y formulario es el get de clientes.
+
+
+ views
+   Crea: la carpeta clientes y la pagina addClientes.ejs
+
