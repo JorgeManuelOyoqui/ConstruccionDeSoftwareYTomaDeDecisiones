@@ -96,6 +96,9 @@ Agrego el Laboratorio 20, donde contesto cada pregunta que me pide y hago todos 
 ### Laboratorio 21
 Hago las consultas que se me solicitan de la base de datos TC2005B_DB
 
+### Laboratorio 22
+Actualizamos el proyecto del socioformador de modo que se implementan nuevas funciones para descargar (en pdf, excel o csv) o subir (en csv) archivos a la base de datos, y también para poder ver, agregar, editar o eliminar datos dentro de la base de datos. Este avance se encuentra en el repositorio grupal en la carpeta de Avance 4, dentro de archivo Avance4.zip, y de entre todos los programas es el que se llama PrototipoEsplendor_ver4.1.zip. Sigan las instrucciones del documento "Explciación del Laboratorio 22" para entender que cambios se hicieron en la base de datos y ver dónde se encuentran y cómo se usan las nuevas funcionalidades.
+
 ### Laboratorio 23
 Hago los procedures que se me solicitan de la base de datos TC2005B_DB
 
