@@ -98,3 +98,6 @@ Hago las consultas que se me solicitan de la base de datos TC2005B_DB
 
 ### Laboratorio 23
 Hago los procedures que se me solicitan de la base de datos TC2005B_DB
+
+### Laboratorio 25
+Realizo la investigación que se me solicitó acerca de los deadlocks en un contexto de bases de datos. 
