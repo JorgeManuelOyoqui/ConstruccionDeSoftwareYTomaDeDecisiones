@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Mi Lista de Compras</h1>
+    
+    <form id="shoppingForm">
+      <input type="text" id="name" name="name" placeholder="Nombre">
+      <input type="number" id="quantity" name="quantity" placeholder="Cantidad">
+      <input type="number" id="price" name="price" placeholder="Precio">
+      <button type="submit">Añadir</button>
+  </form>
+  <p></p>
+
+    <button id="updateProducts">Actualizar Productos</button>
+      
+    <h2>Artículos Agregados:</h2>
+    <section>
+      <div id="productList"></div>
+    </section>
+
+    <h2>Tabla de Artículos:</h2>
+    <div id="wrapper"></div>
+  
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+
+    <p></p>
+
+    <section>
+    <h2>Preguntas del Lab 24</h2>
+      <div>
+        <h3>¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?</h3>
+        <p>AJAX (Asynchronous JavaScript and XML) es una tecnología muy útil en el desarrollo de Aplicaciones Ricas de Internet (RIA's) ya que permite que el usuario tenga una experiencia de usuario más fluida, interactiva y dinámica. Algunos ejemplos de su importancia son:</p>
+        <ul>
+          <li><b>Interacción asincrónica sin recargar la página:</b> donde AJAX permite que partes de una página web se actualicen sin necesidad de recargarla completamente.</li>
+          <li><b>Mayor interactividad y respuesta inmediata:</b> pues al enviar y recibir datos en segundo plano con el servidor (mediante JSON o XML por ejemplo), AJAX permite que las acciones del usuario tengan una respuesta más inmediata.</li>
+          <li><b>Reducción del tráfico entre cliente y servidor: </b>pues como solo se envían y reciben los datos necesarios, se reduce el ancho de banda utilizado, haciendo que las aplicaciones sean más eficientes, sobre todo en aquellas que tienen muchas interacciones.</li>
+        </ul>
+        <a href="https://fastercapital.com/es/tema/beneficios-de-ajax-en-ria-modernos.html">FasterCapital (S.F.). "Beneficios De Ajax En Ria Modernos". Recuperado de: https://fastercapital.com/es/tema/beneficios-de-ajax-en-ria-modernos.html</a>
+      </div>
+
+      <div>
+        <h3>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?</h3>
+        <p>Al trabajar con AJAX se pueden llegar a presentar vulnerabilidades en la seguridad que se deben de atender. Algunos ejemplos de estas vulnerabildiades pueden ser:</p>
+        <ul>
+          <li><b>Exposición de servicios en el cliente: </b>Como las llamadas AJAX son visibles en herramientas de desarrollo,un atacante podría llegar a inspeccionarlas, modificarlas o reproducirlas fácilmente exponiendo URLs, endpoints o incluso datos sensibles si no se protege adecuadamente.</li>
+          <li><b>Inyección de código: </b>Donde si no se genera la seguridad correcta, un atacante puede inyectar código malicioso que se ejecutará en el navegador de otros usuarios.</li>
+          <li><b>CSRF (Cross-Site Request Forgery): </b>Las aplicaciones que usan AJAX pueden ser vulnerables a ataques de CSRF si no se implementan tokens de autenticación para verificar que las solicitudes provienen del usuario legítimo.</li>
+          <li><b>Falta de control de acceso: </b>Si el backend no verifica correctamente los privilegios del usuario, un atacante puede usar AJAX para acceder a recursos o realizar acciones para las que no tiene permiso.</li>
+        </ul>
+        <p>Para mejorar la seguridad, se deben hacer validaciones de seguridad tanto por lado del cliente como por la parte del servidor:</p>
+        <ul>
+          <li><b>Del lado del cliente:</b> se puede hacer validación preliminar para mejorar la experiencia del usuario, aunque sería fácil para un atacante evitarlo o saltarse esa seguridad.</li>
+          <li><b>Del lado del servidor:</b> es la única validación confiable y obligatoria donde toda solicitud recibida debe ser verificada en cuanto a la autenticación del usuario, permisos o roles de acceso, validación y sanitización de datos y la protección contra inyecciones y otros ataques</li>
+        </ul>
+        <a href="https://bluegoatcyber.com/blog/understanding-ajax-vulnerabilities/">Blue Goat (S.F.). "Comprensión de las vulnerabilidades de Ajax". Recuperado de: https://bluegoatcyber.com/blog/understanding-ajax-vulnerabilities/</a>
+        <a href="https://www.magazcitum.com.mx/index.php/archivos/5946">Magazcitum (S.F.). "Seguridad en aplciaciones AJAX (parte 1 de 2)". Recuperado de: https://www.magazcitum.com.mx/index.php/archivos/5946</a>
+      </div>
+
+      <div>
+        <h3>¿Qué es JSON?</h3>
+        <p>JSON (JavaScript Object Notation) es un formato basado en texto para almacenar e intercambiar datos de una manera que es 
+          legible por humanos y analizable por máquina. JSON es un formato de datos que suelen utilizar los desarrolladores web para 
+          transferir datos entre un servidor y una aplicación web. Los desarrolladores a menudo prefieren JSON porque simplifica el intercambio
+           de datos entre diferentes tecnologías. Por ejemplo, cuando un usuario interactúa con una aplicación web para realizar una compra, 
+           la aplicación envía la entrada del usuario al servidor en formato JSON. (Oracle, 2024).</p>
+        <p>JSON es popular entre los desarrolladores porque se trata de un formato flexible para el intercambio de datos que goza de 
+          un amplio soporte en lenguajes de programación modernos y sistemas de software. Es basado en texto y ligero y tiene un 
+          formato de datos fácil de analizar, lo que significa que no requiere código adicional para comprender e interpretar los 
+          datos proporcionados. (Oracle, 2024).</p>
+        <p>JSON trabaja con muchos tipos de datos, como lo pueden ser objetos, matrices, cadenas, boolenaos, nulos o números.</p>
+        <p>Los principales casos de uso de JSON son:</p>
+        <ul>
+          <li><b>Transferencia de datos entre sistemas:</b> pues JSON es ideal para transferir datos entre diferentes sistemas y lenguajes de programación. (Oracle, 2024).</li>
+          <li><b>Generación de un objeto JSON a partir de datos generados por el usuario:</b> pues JSON es ideal para el almacenamiento de datos temporales. (Oracle, 2024).</li>
+          <li><b>Simplificación de modelos de datos complejos:</b> JSON simplifica los documentos complejos hasta reducirlos a los componentes identificados como significativos, convirtiendo el proceso de extracción de datos en un archivo JSON predecible y legible por humanos. (Oracle, 2024).</li>
+          <li><b>Archivos de configuración y almacenamiento de datos:</b> JSON permite una fácil manipulación y recuperación de datos. En concreto, admite estructuras anidadas, lo que facilita el almacenamiento de datos complejos y jerárquicos. También admite matrices, por lo que es adecuado para almacenar varias instancias de datos similares. (Oracle, 2024)</li>
+        </ul>
+        <p>Ahora, cabe aclarar que JSON no es ni un archivo ni un código, sino un formato usado para almacenar y transportar datos. 
+          Tampoco es un lenguaje de programación, pues si bien se derivó de JavaScript, el propio  JSON no soporta funciones de la 
+          misma manera que lo hace un verdadero lenguaje de programación. JSON se utiliza simplemente para almacenar y transmitir datos 
+          entre un servidor y una aplicación web o entre diferentes sistemas.</p>
+        <a href="https://www.oracle.com/mx/database/what-is-json/">Oracle (2024). "¿Qué es JSON?". Recuperado de: https://www.oracle.com/mx/database/what-is-json/</a>
+      </div>
+    </section>
+</body>
+</html>
