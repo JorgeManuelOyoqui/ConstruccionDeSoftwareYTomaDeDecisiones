@@ -102,5 +102,8 @@ Actualizamos el proyecto del socioformador de modo que se implementan nuevas fun
 ### Laboratorio 23
 Hago los procedures que se me solicitan de la base de datos TC2005B_DB
 
+### Laboratorio 24
+Genero un archivo desde 0 que trabaje con AJAX para que cuando un usuario ingrese un nuevo producto a la lista de compras, se imprima el producto de forma automática sin necesidad de reiniciar la página (lo único que sí requiere recarga es la tabla grid). Aparte de que respondo las preguntas del laboratorio.
+
 ### Laboratorio 25
 Realizo la investigación que se me solicitó acerca de los deadlocks en un contexto de bases de datos. 
