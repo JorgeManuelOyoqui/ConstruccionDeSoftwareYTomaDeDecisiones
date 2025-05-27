@@ -107,3 +107,9 @@ Genero un archivo desde 0 que trabaje con AJAX para que cuando un usuario ingres
 
 ### Laboratorio 25
 Realizo la investigación que se me solicitó acerca de los deadlocks en un contexto de bases de datos. 
+
+### Laboratorio 27
+No hay laboratorio 27
+
+### Laboratorio 28
+Hago los dos triggers que se me solicitan, de modo que uno sirve para registrar las acciones que un usuarios haga sobre la tabla de productos (ya sea agregar, editar o eliminar un producto) y almacena esta información en la tabla de Historial Actividades. El segundo trigger sirve más para la lógica de la tabla, de modo que se usa un trigger para prohibir que un usuario pueda realizar un pedido con 0 prodcutos, y de ser el caso le manda un error indicándole que eso no se puede. Igualmente, respondo las preguntas del laboratorio. 
