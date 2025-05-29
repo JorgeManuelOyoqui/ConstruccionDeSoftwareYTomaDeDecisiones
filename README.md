@@ -108,6 +108,9 @@ Genero un archivo desde 0 que trabaje con AJAX para que cuando un usuario ingres
 ### Laboratorio 25
 Realizo la investigación que se me solicitó acerca de los deadlocks en un contexto de bases de datos. 
 
+### Laboratorio 26
+Implemento el juego de Battle Ship donde te enfrentas a una máquina. En la carpeta Lab26 encontrarán los archivos que usé, pero para subirla a internet (pues el método que usé me resultó más fácil así que implementando MVC) cree un nuevo repositorio llamado BattleShip cuyo link también dejo (https://github.com/JorgeManuelOyoqui/BattleShip), y es ahí donde creo la ruta para que se pueda jugar al juego. La ruta para jugar a mi juego de Battle Ship es: https://battleship.github.io/. 
+
 ### Laboratorio 27
 No hay laboratorio 27
 
